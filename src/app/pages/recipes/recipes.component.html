@@ -1,0 +1,51 @@
+<app-navbar></app-navbar>
+
+<!--<div class="flex flex-row justify-end m-6">
+    <button [routerLink]="['/add-recipes']"  class="text-black w-[100px]  bg-[#03C03C] p-3 rounded-2xl text-sm ml-10 ">
+        Add a new Recipe
+    </button>
+</div>-->
+<nav class="bg-white">
+    <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+      <div class="relative flex h-16 items-center justify-between">
+        <div class="flex flex-row justify-center align-middle w-full">
+          <div class="hidden sm:ml-6 sm:block">
+            <div class="flex justify-center space-x-4">
+              <span (click)="onTabClick('breakfast')" class="rounded-md px-3 py-2 text-sm font-medium text-[#000000] hover:text-[#03C03C] cursor-pointer">Breakfast</span>
+              <span (click)="onTabClick('lunch')" class="rounded-md px-3 py-2 text-sm font-medium text-[#000000] hover:text-[#03C03C] cursor-pointer">Lunch</span>
+              <span (click)="onTabClick('dinner')" class="rounded-md px-3 py-2 text-sm font-medium text-[#000000] hover:text-[#03C03C] cursor-pointer">Dinner</span>
+              <span (click)="onTabClick('dessert')" class="rounded-md px-3 py-2 text-sm font-medium text-[#000000] hover:text-[#03C03C] cursor-pointer">Dessert</span>
+              <span (click)="onTabClick('beverages')" class="rounded-md px-3 py-2 text-sm font-medium text-[#000000] hover:text-[#03C03C] cursor-pointer">Beverages</span>
+              <span (click)="onTabClick('snacks')" class="rounded-md px-3 py-2 text-sm font-medium text-[#000000] hover:text-[#03C03C] cursor-pointer">Snacks</span>
+              <span (click)="onTabClick('pastries')" class="rounded-md px-3 py-2 text-sm font-medium text-[#000000] hover:text-[#03C03C] cursor-pointer">Pastries</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</nav>
+
+  
+  <div *ngIf="recipeList.length > 0; else noRecipes" class="flex flex-wrap gap-x-4 gap-y-4 m-7 justify-around  ">
+    <div class="rounded-3xl border" *ngFor="let recipe of recipeList">
+        <img [src]="recipe.imageUrl" alt="{{ recipe.name }}" class="w-[200px]  h-[200px] rounded-3xl">
+        <div class="px-6  ">
+            <div class="font-bold text-xl mb-2">{{ recipe.name }}</div>
+          
+        </div>
+        <div [routerLink]="['/recipe', activeCategory, recipe.name]" class="px-6 pt-4 pb-2 flex justify-end cursor-pointer">
+            <span class="inline-block bg-[#03C03C] rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">View Recipe</span>
+        </div>
+      <h3></h3>
+      <p></p>
+      <!--<p>{{ recipe.ingredients.join(', ') }}</p>-->
+      <!--<p>{{ recipe.instructions }}</p>-->
+    </div>
+  </div>
+  
+  <ng-template #noRecipes>
+    <p>No recipes available for this category.</p>
+  </ng-template>
+  
+
+

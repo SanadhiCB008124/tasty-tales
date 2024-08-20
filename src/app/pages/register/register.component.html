@@ -1,0 +1,37 @@
+<div class="h-screen background-container mt-0">
+
+    <div class="custom-shadow justify-center flex flex-col bg-white w-[400px] border box-border box-shadow border-r-8 px-6 py-3">
+      <div class="mx-auto max-w-2xl text-center">
+        <h2 class="text-3xl font-bold tracking-tight text-[#004225] sm:text-4xl">Register</h2>
+      </div>
+      <form (ngSubmit)="onRegister()" #registerForm="ngForm" class="mx-auto w-full mt-16 sm:mt-20">
+        <div class="flex flex-col gap-y-8 w-[100%] p-2">
+          <div>
+            <label for="email" class="block text-sm font-semibold leading-6 text-gray-900">Email</label>
+            <div class="mt-2.5">
+              <input type="email" [(ngModel)]="email" name="email" id="email" required class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6">
+            </div>
+          </div>
+  
+          <div>
+            <label for="password" class="block text-sm font-semibold leading-6 text-gray-900">Enter a Secure password</label>
+            <div class="mt-2.5">
+              <input type="password" [(ngModel)]="password" name="password" id="password" required class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6">
+            </div>
+          </div>
+        </div>
+  
+        <div class="flex flex-col gap-y-4">
+          <div class="mt-10">
+            <button type="submit" class="block w-full rounded-md bg-[#03C03C] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">Register</button>
+          </div>
+  
+          <div>
+            <button type="button" [routerLink]="['/login']" class="block w-full rounded-md bg-[#121212] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">Login</button>
+          </div>
+          <p class="text-[#03C03C] text-left">Already have an account? login</p>
+        </div>
+      </form>
+    </div>
+  </div>
+  

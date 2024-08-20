@@ -1,0 +1,17 @@
+.background-container{
+    background-image: url('../../../assets/images/backdrop.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+
+.custom-shadow {
+    box-shadow: 0 4px 6px rgba(3, 192, 60, 0.5), 0 1px 3px rgba(3, 192, 60, 0.3);
+}
+  

@@ -1,0 +1,35 @@
+<div  class="bg-white h-screen">
+
+    <div class="bg-white h-screen" *ngIf="recipe">
+      <h1 class="text-2xl font-bold m-10 tracking-tight text-gray-900 sm:text-3xl">{{ recipe.name }}</h1>
+      
+        <div class="pt-6 m-6 flex">
+        
+          <!-- Image gallery -->
+          <div class="flex m-7  w-33">
+        
+            <img [src]="recipe.imageUrl" alt="{{ recipe.name }}" class="h-full w-full object-cover object-center box-border border-x-slate-300  rounded-2xl">
+          </div>
+        
+          <!-- Product info -->
+          <div class="flex flex-col ml-12 border m-10 border-black border-r-4 p-10  justify-center align-middle bg-green-300">
+        <!-- Description and details -->
+            <div class="mt-6">
+              <h2 class="text-md mb-3  font-bold text-gray-900">Description:</h2>
+              <p class="text-base text-gray-900 font-bold">{{ recipe.description }}</p>
+            </div>
+      
+            <div class="mt-10">
+              <h2 class="text-sm font-medium text-gray-900">Ingredients:</h2>
+              <p class="text-sm text-gray-600">{{ recipe.ingredients.join(', ') }}</p>
+            </div>
+      
+            <div class="mt-10">
+              <h2 class="text-sm font-medium text-gray-900">How to make:</h2>
+              <p class="text-sm text-gray-600">{{ recipe.instructions }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+</div>
